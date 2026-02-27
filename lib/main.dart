@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'cart_model.dart';
+import 'cart_model.dart'; // Mengambil logika dari file sebelah
 
 void main() {
   runApp(
-    // Membungkus aplikasi dengan ChangeNotifierProvider
-    // agar State bisa diakses di mana saja
     ChangeNotifierProvider(
       create: (context) => CartModel(),
       child: const MyApp(),
-    ), // ChangeNotifierProvider
+    ),
   );
 }
 
+// 2. UI LAYER ---
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -20,14 +19,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('State Management Provider'),
-        ),
-        body: const Center(
-          child: Text('Aplikasi Berhasil Dijalankan'),
-        ),
-      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MyCatalog(),
+        '/cart': (context) => const MyCart(),
+      },
     );
   }
 }
