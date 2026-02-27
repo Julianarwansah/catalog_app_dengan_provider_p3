@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// Pastikan untuk mengimport file CartModel Anda di sini
-// import 'package:nama_project/cart_model.dart';
+import 'cart_model.dart';
 
 void main() {
   runApp(
