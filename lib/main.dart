@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'cart_model.dart'; // Mengambil logika dari file sebelah
+import 'cart_model.dart';
+import 'my_catalog.dart';
 
 void main() {
   runApp(
